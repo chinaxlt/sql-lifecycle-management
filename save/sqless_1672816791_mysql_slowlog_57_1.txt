@@ -1,0 +1,44 @@
+/usr/local/mysql/bin/mysqld, Version: 5.7.36 (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /u01/mysql/mysql.sock
+Time                 Id Command    Argument
+# Time: 2022-08-01T06:22:21.148963Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3987
+# Query_time: 11.959699  Lock_time: 0.000188 Rows_sent: 0  Rows_examined: 843008
+use luli1;
+SET timestamp=1659334941;
+SELECT * FROM `prizecore`.`ps_prize_send_log222_t` WHERE camp_id = ? ORDER BY id DESC
+# Time: 2022-08-01T06:22:43.983542Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3987
+# Query_time: 20.070820  Lock_time: 0.000210 Rows_sent: 0  Rows_examined: 1686016
+SET timestamp=1659334963;
+SELECT COUNT(lottery_grade) AS gradeSum, lottery_grade FROM `antmember008`.`am_ant_lottery_flow_08_t` f WHERE f.lottery_status = ? GROUP BY lottery_grade ORDER BY gradeSum
+# Time: 2022-08-02T09:08:36.878247Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3991
+# Query_time: 38.081178  Lock_time: 0.000299 Rows_sent: 0  Rows_examined: 3372032
+SET timestamp=1659431316;
+SELECT * FROM `prizecore`.`ps_prize_send_log743` WHERE camp_id = #camp_id# AND out_biz_no = ?
+# Time: 2022-08-02T09:11:36.878247Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3991
+# Query_time: 38.081178  Lock_time: 0.000299 Rows_sent: 0  Rows_examined: 3372032
+SET timestamp=1659431316;
+UPDATE sync_user_bucket_sync_point_2884_T SET sync_point = ?, gmt_modified = NOW(), client_app = ? WHERE principal_id = ? AND bucket_type = ? AND client_app = ?
+# Time: 2022-08-02T09:11:38.878247Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3991
+# Query_time: 38.081178  Lock_time: 0.000299 Rows_sent: 0  Rows_examined: 3372032
+SET timestamp=1659431316;
+SELECT COUNT(?) FROM `antmember006`.am_user_carbon_trans_temp WHERE biz_time = ? AND biz_type = ?
+# Time: 2022-08-02T09:14:38.878247Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3991
+# Query_time: 38.081178  Lock_time: 0.000299 Rows_sent: 0  Rows_examined: 3372032
+SET timestamp=1659431316;
+SELECT * FROM ha_treeversion WHERE tree_id = ? AND status IN (?) AND version_type IS NULL AND version_type IS NULL ORDER BY gmt_create DESC
+# Time: 2022-08-02T11:14:38.878247Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3991
+# Query_time: 38.081178  Lock_time: 0.000299 Rows_sent: 0  Rows_examined: 3372032
+SET timestamp=1659431316;
+SELECT * FROM `antinvoice72`.einv_base_info WHERE payee_register_no = ? LIMIT 10
+# Time: 2022-08-02T11:37:38.878247Z
+# User@Host: admin[admin] @  [127.0.0.1]  Id:  3991
+# Query_time: 38.081178  Lock_time: 0.000299 Rows_sent: 0  Rows_examined: 3372032
+SET timestamp=1659431316;
+SELECT COUNT(*) FROM `prizecore`.`ps_prize_camp_splitamount_log250_t` WHERE budgetid = ? AND batchid = ?

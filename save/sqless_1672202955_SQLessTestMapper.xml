@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xxx.xxx.xxx">
+
+    <sql id="affevent.user_columns">
+	    id,username,password
+    </sql>
+
+    <select id="query" resultType="User">
+		select
+	    <include refid="affevent.user_columns"/>
+        from t_user
+    </select>
+
+    <select id="query_ps_prize_send_log222_t" resultType="Map">
+        SELECT * FROM `prizecore`.`ps_prize_send_log222_t` WHERE camp_id = #camp_id# ORDER BY id DESC
+    </select>
+
+    <select id="query_am_ant_lottery_flow_08_t" resultType="Map">
+        SELECT COUNT(lottery_grade) AS gradeSum, lottery_grade FROM `antmember008`.`am_ant_lottery_flow_08_t` f WHERE f.lottery_status = #lottery_status# GROUP BY lottery_grade ORDER BY gradeSum
+    </select>
+
+    <select id="query_ps_prize_send_log743" resultType="Map">
+        SELECT * FROM `prizecore`.`ps_prize_send_log743` WHERE camp_id = #camp_id# AND out_biz_no = #out_biz_no#
+    </select>
+    
+    <update id="update_sync_user_bucket_sync_point_2884_T" resultType="Map">
+        UPDATE sync_user_bucket_sync_point_2884_T SET sync_point = #sync_point#, gmt_modified = NOW(), client_app = #client_app# WHERE principal_id = #principal_id# AND bucket_type = #bucket_type# AND client_app = #client_app2#
+    </update>
+    
+    <select id="query_am_user_carbon_trans_temp" resultType="Map">
+        SELECT COUNT(?) FROM `antmember006`.am_user_carbon_trans_temp WHERE biz_time = #biz_time# AND biz_type = #biz_type#
+    </select>
+
+    <select id="query_ha_treeversion" resultType="Map">
+        SELECT * FROM ha_treeversion WHERE tree_id = #tree_id# AND status IN (#status#) AND version_type IS NULL AND date_format(version_timestamp, #version_type#) = #version_type# AND version_type IS NULL ORDER BY gmt_create DESC
+    </select>
+
+    <select id="query_einv_base_info" resultType="Map">
+        SELECT * FROM `antinvoice72`.einv_base_info WHERE payee_register_no = #payee_register_no# LIMIT 10
+    </select>
+
+    <select id="query_ps_prize_camp_splitamount_log250_t" resultType="Map">
+        SELECT COUNT(*) FROM `prizecore`.`ps_prize_camp_splitamount_log250_t` WHERE budgetid = #budgetid# AND batchid = #batchid#
+    </select>
+
+
+</mapper>
